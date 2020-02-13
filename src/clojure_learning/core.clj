@@ -25,6 +25,24 @@
     (println str1))    
 )
 
+(defn listReplicate []
+  (def N 2)
+  (def xvals [1 2 3])
+  (into []
+    (flatten
+      (for [curr-x xvals]
+        (repeat N curr-x))))
+)
+
+(defn list-replicate [num list] 
+  (mapcat (partial repeat num) list)
+)
+
+(defn list-replicate-helper []
+  (doseq [x (list-replicate 2 [1 2 3])]
+    (println x))  
+)
+
 (defn -main
   [& args]
   (println str1)
